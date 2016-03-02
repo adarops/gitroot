@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+			android:layout_marginTop="50dp">
+
+			<RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:text="LDW Sensitivity" />
+            </RelativeLayout>
+        </LinearLayout>        
+        <LinearLayout
+            android:id="@+id/ll_ldw_sensi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true" >
+
+            <RelativeLayout
+                android:id="@+id/rl_ldw_left"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <Button
+                    android:id="@+id/btn_ldw_left_minus"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/et_ldw_left_sensi"
+                    android:text="-" />
+
+                <EditText
+                    android:id="@+id/et_ldw_left_sensi"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:inputType="none" />
+
+                <Button
+                    android:id="@+id/btn_ldw_left_plus"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/et_ldw_left_sensi"
+                    android:text="+" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_ldw_right"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <Button
+                    android:id="@+id/btn_ldw_right_minus"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toLeftOf="@+id/et_ldw_right_sensi"
+                    android:text="-" />
+
+                <EditText
+                    android:id="@+id/et_ldw_right_sensi"
+                    android:layout_width="75dp"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:inputType="none" />
+
+                <Button
+                    android:id="@+id/btn_ldw_right_plus"
+                    android:layout_width="50dp"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/et_ldw_right_sensi"
+                    android:text="+" />
+            </RelativeLayout>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="Left" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" >
+
+                <TextView
+                    android:id="@+id/tv_ldw_right_sensi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:text="Right" />
+            </RelativeLayout>
+        </LinearLayout>
+        <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp">
+
+			<TextView
+			    android:layout_width="wrap_content"
+			    android:layout_height="wrap_content"
+			    android:layout_alignParentLeft="true"
+			    android:layout_marginLeft="10dp"
+			    android:textSize="20sp"
+			    android:textStyle="bold"
+			    android:text="FCW Sensitivity" />
+        </RelativeLayout>
+        <RadioGroup 
+            android:id="@+id/rg_line1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/radio_button1"
+                android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:text="0.6"/>
+            <RadioButton
+                android:id="@+id/radio_button2" 
+                android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_marginLeft="20dp"
+            	android:text="0.9"/>
+            <RadioButton 
+                android:id="@+id/radio_button3"
+                android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_marginLeft="20dp"
+            	android:text="1.2"/>
+        </RadioGroup>
+		<RadioGroup
+		    android:id="@+id/rg_line2" 
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:orientation="horizontal">
+            <RadioButton 
+                android:id="@+id/radio_button4"
+                android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:text="1.5"/>
+            <RadioButton 
+                android:id="@+id/radio_button5"
+                android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_marginLeft="20dp"
+            	android:text="2.0"/>
+            <RadioButton 
+                android:id="@+id/radio_button6"
+                android:layout_width="wrap_content"
+            	android:layout_height="wrap_content"
+            	android:layout_marginLeft="20dp"
+            	android:text="3.0"/>
+        </RadioGroup>
+    </LinearLayout>
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true" >
+
+        <Button
+            android:id="@+id/btn_prev4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:text="Prev" />
+
+        <Button
+            android:id="@+id/btn_next4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:text="Apply" />
+    </RelativeLayout>
+
+</RelativeLayout>
