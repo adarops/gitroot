@@ -1,0 +1,70 @@
+ECLIPSE ANDROID PROJECT IMPORT SUMMARY
+======================================
+
+Ignored Files:
+--------------
+The following files were *not* copied into the new Gradle project; you
+should evaluate whether these are still needed in your project and if
+so manually move them:
+
+* Android.mk
+
+Replaced Jars with Dependencies:
+--------------------------------
+The importer recognized the following .jar files as third party
+libraries and replaced them with Gradle dependencies instead. This has
+the advantage that more explicit version information is known, and the
+libraries can be updated automatically. However, it is possible that
+the .jar file in your project was of an older version than the
+dependency we picked, which could render the project not compileable.
+You can disable the jar replacement in the import wizard and try again:
+
+android-support-v4.jar => com.android.support:support-v4:19.1.0
+
+Moved Files:
+------------
+Android Gradle projects use a different directory structure than ADT
+Eclipse projects. Here's how the projects were restructured:
+
+* AndroidManifest.xml => app/src/main/AndroidManifest.xml
+* assets/ => app/src/main/assets
+* libs/AndroidCameraSDK.jar => app/libs/AndroidCameraSDK.jar
+* libs/CloseliSDKForCar.jar => app/libs/CloseliSDKForCar.jar
+* libs/CloseliSDKForCarDoc.jar => app/libs/CloseliSDKForCarDoc.jar
+* libs/armeabi/libBDVoiceRecognitionClient_MFE_V1.so => app/src/main/jniLibs/armeabi/libBDVoiceRecognitionClient_MFE_V1.so
+* libs/armeabi/libESD.so => app/src/main/jniLibs/armeabi/libESD.so
+* libs/armeabi/libP2PWrapper.so => app/src/main/jniLibs/armeabi/libP2PWrapper.so
+* libs/armeabi/libUPNS.so => app/src/main/jniLibs/armeabi/libUPNS.so
+* libs/armeabi/libbdEASRAndroid.so => app/src/main/jniLibs/armeabi/libbdEASRAndroid.so
+* libs/armeabi/libcorecloudsdk.so => app/src/main/jniLibs/armeabi/libcorecloudsdk.so
+* libs/armeabi/libcrypto.so.so => app/src/main/jniLibs/armeabi/libcrypto.so.so
+* libs/armeabi/libexpat.so => app/src/main/jniLibs/armeabi/libexpat.so
+* libs/armeabi/libgnustl_shared.so => app/src/main/jniLibs/armeabi/libgnustl_shared.so
+* libs/armeabi/liblecamapp.so => app/src/main/jniLibs/armeabi/liblecamapp.so
+* libs/armeabi/libmp4mux.so => app/src/main/jniLibs/armeabi/libmp4mux.so
+* libs/armeabi/libmsc.so => app/src/main/jniLibs/armeabi/libmsc.so
+* libs/armeabi/libmv3_X264Enc.so => app/src/main/jniLibs/armeabi/libmv3_X264Enc.so
+* libs/armeabi/libnt96650_serial_port.so => app/src/main/jniLibs/armeabi/libnt96650_serial_port.so
+* libs/armeabi/libp2p.so => app/src/main/jniLibs/armeabi/libp2p.so
+* libs/armeabi/libssl.so.so => app/src/main/jniLibs/armeabi/libssl.so.so
+* libs/armeabi/libstlport_shared.so => app/src/main/jniLibs/armeabi/libstlport_shared.so
+* libs/armeabi/libtest_jni.so => app/src/main/jniLibs/armeabi/libtest_jni.so
+* libs/armeabi/libtinyxml.so => app/src/main/jniLibs/armeabi/libtinyxml.so
+* libs/armeabi/libvadLib.so => app/src/main/jniLibs/armeabi/libvadLib.so
+* res/ => app/src/main/res/
+* src/ => app/src/main/java/
+
+Next Steps:
+-----------
+You can now build the project. The Gradle project needs network
+connectivity to download dependencies.
+
+Bugs:
+-----
+If for some reason your project does not build, and you determine that
+it is due to a bug or limitation of the Eclipse to Gradle importer,
+please file a bug at http://b.android.com with category
+Component-Tools.
+
+(This import summary is for your information only, and can be deleted
+after import once you are satisfied with the results.)

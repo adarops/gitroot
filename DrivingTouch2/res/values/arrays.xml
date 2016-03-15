@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="camera_buttons">
+        <item>@+id/btn_lock</item>
+        <item>@+id/btn_mic</item>
+        <item>@+id/btn_recorder_enable</item>
+        <item>@+id/btn_switch_picinpic</item>
+        <item>@+id/btn_back_ui</item>
+        <item>@+id/btn_settings</item>
+        <item>@+id/btn_playback_menu</item>
+        <item>@+id/btn_take_photo</item>
+        <item>@+id/btn_get_photo</item>
+        <item>@+id/btn_up</item>
+        <item>@+id/btn_down</item>
+        <item>@+id/btn_ok</item>
+        <item>@+id/btn_back_previous</item>
+        <item>@+id/btn_sync_date</item>
+        <item>@+id/btn_syn_watermark</item>
+        <item>@+id/btn_shaking_hands</item>
+        <item>@+id/btn_backlight_adjustment</item>
+        <item>@+id/lcm_switch</item>
+        <item>@+id/btn_power</item>
+        <item>@+id/btn_tvout</item>
+    </array>
+    <array name="first_buttons">
+        <item>@+id/btn_lock</item>
+        <item>@+id/btn_mic</item>
+        <item>@+id/btn_recorder_enable</item>
+        <item>@+id/btn_switch_picinpic</item>
+        <item>@+id/btn_back_ui</item>
+        <item>@+id/btn_settings</item>
+        <item>@+id/btn_playback_menu</item>
+        <item>@+id/btn_take_photo</item>
+    </array>
+    <array name="second_buttons">
+        <item>@+id/btn_up</item>
+        <item>@+id/btn_down</item>
+        <item>@+id/btn_ok</item>
+        <item>@+id/btn_back_previous</item>
+    </array>
+    <array name="third_buttons">
+        <item>@+id/btn_up</item>
+        <item>@+id/btn_down</item>
+        <item>@+id/btn_ok</item>
+        <item>@+id/btn_back_previous</item>
+    </array>
+</resources>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@drawable/icon_redio_on_pre" android:state_pressed="true"/>
+    <item android:drawable="@drawable/icon_redio_on_nor" android:state_pressed="false"/>
+
+</selector>
+<!-- From: file:/home/zoufeng/gitwork/ilincar/DrivingRecorder/app/src/main/res/drawable/recorder_enabled_btn.xml -->

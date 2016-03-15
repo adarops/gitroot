@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true"
+        android:drawable="@drawable/nav_back_pre" />
+
+    <item android:state_focused="true" android:state_enabled="true"
+        android:state_window_focused="true"
+        android:drawable="@drawable/nav_back_nor" />
+    <item
+         android:drawable="@drawable/nav_back_nor" />
+</selector><!-- From: file:/home/zoufeng/gitwork/ilincar/DrivingRecorder/app/src/main/res/drawable/setting_button_back.xml -->

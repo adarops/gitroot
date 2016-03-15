@@ -1,0 +1,203 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.ilincar.drivingrecorder2.DrivingRecorderSettings" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/nav_highlight" >
+
+        <ImageButton
+            android:id="@+id/btn_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:padding="10dip"
+            android:layout_marginLeft="50dp"
+            android:src="@drawable/setting_button_back"
+            android:background="@null" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="@string/settings_title"
+            android:textSize="40dp" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/video_clarity"
+                android:textSize="18dp" />
+
+            <RadioGroup
+                android:id="@+id/group_video_clarity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/video_clarity_720"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/video_clarity_min"
+                    />
+                <RadioButton
+                    android:id="@+id/video_clarity_1080"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="55dp"
+                    android:text="@string/video_clarity_max"
+                    />
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/length_of_each_video"
+                android:textSize="18dp" />
+
+            <RadioGroup
+                android:id="@+id/group_length_video"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="42dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/video_each_one"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/each_one_m"
+                    />
+                <RadioButton
+                    android:id="@+id/video_each_two"
+                    android:layout_marginLeft="50dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/each_two_m"
+                    />
+                <RadioButton
+                    android:id="@+id/video_each_three"
+                    android:layout_marginLeft="55dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/each_three_m"
+                    />
+            </RadioGroup>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/photo_clarity"
+                android:textSize="18dp" />
+
+            <RadioGroup
+                android:id="@+id/group_photo_clarity"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="60dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/photo_clarity_low"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/photo_clarity_low"
+                    />
+                <RadioButton
+                    android:id="@+id/photo_clarity_mid"
+                    android:layout_marginLeft="75dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/photo_clarity_mid"
+                    />
+                <RadioButton
+                    android:id="@+id/photo_clarity_high"
+                    android:layout_marginLeft="78dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/photo_clarity_high"
+                    />
+            </RadioGroup>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/auto_take_picture"
+                android:textSize="18dp" />
+
+            <RadioGroup
+                android:id="@+id/group_auto_take_picture"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="42dp"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/auto_photo_close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/auto_take_picture_close" />
+
+                <RadioButton
+                    android:id="@+id/auto_photo_mid"
+                    android:layout_marginLeft="58dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/auto_take_picture_mid" />
+
+                <RadioButton
+                    android:id="@+id/auto_photo_high"
+                    android:layout_marginLeft="63dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/auto_take_picture_high" />
+            </RadioGroup>
+
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout><!-- From: file:/home/zoufeng/gitwork/ilincar/DrivingRecorder/app/src/main/res/layout/driving_settings.xml -->

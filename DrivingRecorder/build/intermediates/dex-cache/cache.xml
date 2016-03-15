@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/zoufeng/Program/Sdk/extras/android/m2repository/com/android/support/support-v4/19.1.0/support-v4-19.1.0.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67">
+        <dex dex="/home/zoufeng/gitwork/ilincar/DrivingRecorder/app/build/intermediates/pre-dexed/debug/support-v4-19.1.0-cb30256f1e36245c6e7bb11fdd4b26cade2a0fcf.jar" />
+    </item>
+    <item
+        jar="/home/zoufeng/gitwork/ilincar/DrivingRecorder/app/libs/AndroidCameraSDK.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="f766dc5f3563ea3cba9519dd37e100b03455a442">
+        <dex dex="/home/zoufeng/gitwork/ilincar/DrivingRecorder/app/build/intermediates/pre-dexed/debug/AndroidCameraSDK-e933b05d68ec44602313f62480935c82f01af304.jar" />
+    </item>
+    <item
+        jar="/home/zoufeng/gitwork/ilincar/DrivingRecorder/app/libs/CloseliSDKForCar.jar"
+        jumboMode="false"
+        revision="23.0.1"
+        sha1="3196943532d2b595f39c85ceed622b72b3574328">
+        <dex dex="/home/zoufeng/gitwork/ilincar/DrivingRecorder/app/build/intermediates/pre-dexed/debug/CloseliSDKForCar-86fb7907e08b8219f4928ecf38e3bdf422259fe9.jar" />
+    </item>
+
+</items>

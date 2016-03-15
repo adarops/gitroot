@@ -1,0 +1,38 @@
+<AbsoluteLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <Button
+        android:id="@+id/btn_up"
+        android:layout_width="85px"
+        android:layout_height="80px"
+        android:layout_x="10px"
+        android:layout_y="165px"
+        android:text="btn_up" />
+
+    <Button
+        android:id="@+id/btn_down"
+        android:layout_width="85px"
+        android:layout_height="80px"
+        android:layout_x="10px"
+        android:layout_y="265px"
+        android:text="btn_down" />
+
+    <Button
+        android:id="@+id/btn_ok"
+        android:layout_width="85px"
+        android:layout_height="80px"
+        android:layout_x="10px"
+        android:layout_y="365px"
+        android:text="btn_ok" />
+
+    <Button
+        android:id="@+id/btn_back_previous"
+        android:layout_width="85px"
+        android:layout_height="80px"
+        android:layout_x="10px"
+        android:layout_y="10px"
+        android:text="back_previous" />
+
+</AbsoluteLayout>

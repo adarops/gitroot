@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="def_video_clarity">1</integer>   <!--0: 720P  1: 1280P -->
+    <integer name="def_video_duration">0</integer>  <!-- 0 : 1分钟   1: 3分钟-->
+    <integer name="def_photo_clarity">0</integer>   <!-- 0:低  1:普通   2:高-->
+    <integer name="def_auto_lock">1</integer>   <!-- 0: 关闭  1：普通  2: 灵敏-->
+    <bool name="def_sound_enable">true</bool>
+</resources>

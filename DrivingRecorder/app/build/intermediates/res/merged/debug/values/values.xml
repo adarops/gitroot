@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/home/zoufeng/gitwork/ilincar/DrivingRecorder/app/src/main/res/values/arrays.xml -->
+    <eat-comment/>
+    <string-array name="array_double_recording">
+        <item>关</item>
+        <item>开</item>
+    </string-array>
+    <string-array name="array_exposure_compensation">
+        <item>+2/3</item>
+        <item>+1/3</item>
+        <item>+0.0</item>
+        <item>-1/3</item>
+        <item>-2/3</item>
+        <item>-1.0</item>
+        <item>-4/3</item>
+        <item>-5/3</item>
+        <item>-2.0</item>
+    </string-array>
+    <string-array name="array_g_sensor">
+        <item>关</item>
+        <item>高</item>
+        <item>中</item>
+        <item>低</item>
+    </string-array>
+    <string-array name="array_light_balancing">
+        <item>50hz</item>
+        <item>60hz</item>
+    </string-array>
+    <string-array name="array_loop_recorder_time">
+        <item>1分钟</item>
+        <item>2分钟</item>
+        <item>3分钟</item>
+        <item>30秒</item>
+        <item>关</item>
+    </string-array>
+    <string-array name="array_motion_detection">
+        <item>高</item>
+        <item>中</item>
+        <item>低</item>
+        <item>关</item>
+    </string-array>
+    <string-array name="array_recorder_sound">
+        <item>关</item>
+        <item>开</item>
+    </string-array>
+    <string-array name="array_restore_factory">
+        <item>cancle</item>
+        <item>confirm</item>
+    </string-array>
+    <string-array name="array_sdcard_format">
+        <item>cancle</item>
+        <item>confirm</item>
+    </string-array>
+    <string-array name="array_time_watermark">
+        <item>关</item>
+        <item>开</item>
+    </string-array>
+    <string-array name="array_tv_format">
+        <item>NTSC</item>
+        <item>PAL</item>
+    </string-array>
+    <string-array name="array_tv_output">
+        <item>关</item>
+        <item>开</item>
+    </string-array>
+    <string-array name="array_usb_mode">
+        <item>charging</item>
+        <item>store</item>
+        <item>camera</item>
+    </string-array>
+    <string-array name="array_video_resolution">
+        <item>1080FHD</item>
+        <item>720P</item>
+        <item>WVGA</item>
+        <item>VGA</item>
+    </string-array>
+    <string-array name="array_wdr">
+        <item>关</item>
+        <item>开</item>
+    </string-array>
+    <string-array name="models_name">
+        <item>录像分辨率</item>
+        <item>前后录像</item>
+        <item>循环录像</item>
+        <item>录制声音</item>
+        <item>移动侦测</item>
+        <item>重力感应</item>
+        <item>曝光补偿</item>
+        <item>时间水印</item>
+        <item>WDR</item>
+        <item>光源平衡</item>
+        <item>TV输出</item>
+        <item>电视制式</item>
+        <item>USB模式</item>
+        <item>格式化SD卡</item>
+        <item>恢复出厂设置</item>
+    </string-array>
+    <!-- From: file:/home/zoufeng/gitwork/ilincar/DrivingRecorder/app/src/main/res/values/defaults.xml -->
+    <eat-comment/>
+    <bool name="def_sound_enable">true</bool>
+    <!-- From: file:/home/zoufeng/gitwork/ilincar/DrivingRecorder/app/src/main/res/values/colors.xml -->
+    <eat-comment/>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorBlack">#000000</color>
+    <color name="colorLightBlue">#ff6cd2d0</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorTouming">#00000000</color>
+    <color name="colorWhite">#FFFFFF</color>
+    <!-- From: file:/home/zoufeng/gitwork/ilincar/DrivingRecorder/app/src/main/res/values/dimens.xml -->
+    <eat-comment/>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <!-- From: file:/home/zoufeng/gitwork/ilincar/DrivingRecorder/app/src/main/res/values/defaults.xml -->
+    <eat-comment/>
+    <integer name="def_auto_lock">1</integer>
+    <integer name="def_photo_clarity">0</integer>
+    <integer name="def_video_clarity">1</integer>
+    <integer name="def_video_duration">0</integer>
+    <!-- From: file:/home/zoufeng/gitwork/ilincar/DrivingRecorder/app/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="app_name">DrivingRecorder2</string>
+    <string name="auto_clean_file_failed">自动清除存储空间失败，请手动清除......</string>
+    <string name="auto_take_picture">行车异常录制</string>
+    <string name="auto_take_picture_close">关闭</string>
+    <string name="auto_take_picture_high">灵敏</string>
+    <string name="auto_take_picture_mid">普通</string>
+    <string name="backToStart">恢复出厂设置</string>
+    <string name="backToStart_note">此操作会抹掉所有\n内容和设置，是否继续？</string>
+    <string name="backToStart_yes">继续</string>
+    <string name="camera_preview_failed">摄像头预览头败</string>
+    <string name="cancel">取消</string>
+    <string name="confirm">确认</string>
+    <string name="create_videofile_fail">创建视频文件失败</string>
+    <string name="each_one_m">1分钟</string>
+    <string name="each_three_m">3分钟</string>
+    <string name="each_two_m">2分钟</string>
+    <string name="exception_exit">很抱歉,程序出现异常,即将退出.</string>
+    <string name="exception_file_full">Exception视频已满，请手动进行删除</string>
+    <string name="file_saving">照片已存储</string>
+    <string name="file_upload_failed">照片上传失败</string>
+    <string name="file_upload_success">照片上传成功</string>
+    <string name="file_uploading">照片上传中......</string>
+    <string name="formatcard">格式化SD卡</string>
+    <string name="formatcardpro">格式化储存卡将清空储存卡中所有数据</string>
+    <string name="has_mounted_sdcard">已经插入SD卡，正在准备录制环境...</string>
+    <string name="image_custom_title">录音</string>
+    <string name="length_of_each_video">每段录像时长</string>
+    <string name="lock_file_full">存储卡空间不够，请手动清除加锁视频</string>
+    <string name="net_error">网络繁忙，请稍后再试</string>
+    <string name="no">NO</string>
+    <string name="no_sdcard_warm">车机未插卡，不能录制视频</string>
+    <string name="off">OFF</string>
+    <string name="open_camera_fail">打开摄像头失败</string>
+    <string name="photo_clarity">照片清晰度</string>
+    <string name="photo_clarity_high">高</string>
+    <string name="photo_clarity_low">低</string>
+    <string name="photo_clarity_mid">中</string>
+    <string name="prompt">提示</string>
+    <string name="recorder_off">OFF</string>
+    <string name="recorder_on">ON</string>
+    <string name="recorder_sound">录音</string>
+    <string name="sdcard_full">存储卡已满，删除文件失败，请手动删除</string>
+    <string name="settings_title">设置</string>
+    <string name="start_recorder_failed">录制视频失败...</string>
+    <string name="start_recording">已经开始录制视频</string>
+    <string name="stop_recording">已经停止录制视频</string>
+    <string name="take_photo">已保存照片成功</string>
+    <string name="video_clarity">视频清晰度</string>
+    <string name="video_clarity_max">1080P</string>
+    <string name="video_clarity_min">720P</string>
+    <string name="video_locked">本段视频将移动到加锁视频中</string>
+    <!-- From: file:/home/zoufeng/gitwork/ilincar/DrivingRecorder/app/src/main/res/values/styles.xml -->
+    <eat-comment/>
+    <style name="AppTheme" parent="android:Theme.NoTitleBar.Fullscreen">
+        <!-- All customizations that are NOT specific to a particular API-level can go here. -->
+    </style>
+    <style name="dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowFrame">@null</item>
+        <item name="android:windowIsFloating">true</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:background">@android:color/black</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="android:backgroundDimEnabled">false</item>
+    </style>
+</resources>
