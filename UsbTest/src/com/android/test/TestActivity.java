@@ -19,12 +19,14 @@ public class TestActivity extends Activity implements OnClickListener {
 	private Button btGPIO63L;
 	private Button btUsbCamera;
 	private Button btUsbStorage;
+	private Button btUsbCamera1;
+	private Button btUsbStorage1;
 	private static String TAG = "<zyx>";
 	private TestInterface mTest;
 	private NT96650API mNtApi;
 	private static int lcmState;
-	private final int usbStorageMode = 0x02;
-	private final int usbCameraMode = 0x03;
+	private final int USB_STORAGE_MODE = 0x02;
+	private final int USB_CAMERA_MODE = 0x03;
 
 	protected void onCreate(Bundle state) {
 		super.onCreate(state);
@@ -54,6 +56,12 @@ public class TestActivity extends Activity implements OnClickListener {
 		
 		btUsbStorage = (Button) findViewById(R.id.button8);
 		btUsbStorage.setOnClickListener(this);
+		
+		btUsbCamera1 = (Button) findViewById(R.id.button9);
+		btUsbCamera1.setOnClickListener(this);
+		
+		btUsbStorage1 = (Button) findViewById(R.id.button10);
+		btUsbStorage1.setOnClickListener(this);
 		 
 		// mTest.lcmSwitchTo655();
 		lcmState = 1;
@@ -99,15 +107,50 @@ public class TestActivity extends Activity implements OnClickListener {
 			break;	
 		case R.id.button7:
 			Log.i(TAG, "setUsbCamera");
-			mNtApi.keyUsb(usbCameraMode);
-			//mTest.setUsbMode(0);
+			mNtApi.keyUsb(USB_CAMERA_MODE);
+			new Thread(new Runnable() {
+			    @Override
+	            public void run() {
+			    	try {
+						Thread.sleep(500);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+			    	mTest.setUsbMode(1);
+	            }
+			}).start();
+			//mNtApi.keyMic();
 			// Toast.makeText(this, (state ? "on" : "off"),0).show();
 			break;	
 		case R.id.button8:
 			Log.i(TAG, "setUsbStorage");
-			//mTest.setUsbMode(0);
+			mTest.lcmSwitchTo655();
+			new Thread(new Runnable() {
+				@Override
+				public void run() {
+					try {
+						Thread.sleep(500);
+						mNtApi.keyUsb(USB_STORAGE_MODE);
+						//mNtApi.keyMic();
+						Thread.sleep(500);
+						mTest.lcmSwitchTo35();
+						Thread.sleep(500);
+						mTest.setUsbMode(1);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}				
+				}
+			}).start();
+		case R.id.button9:
+			Log.i(TAG, "send 0x21 0x02");
+			mNtApi.keyUsb(USB_STORAGE_MODE);
 			// Toast.makeText(this, (state ? "on" : "off"),0).show();
-			break;	
+			break;
+		case R.id.button10:
+			Log.i(TAG, "send 0x21 0x03");
+			mNtApi.keyUsb(USB_CAMERA_MODE);
+			// Toast.makeText(this, (state ? "on" : "off"),0).show();
+			break;
 		}
 	}
 

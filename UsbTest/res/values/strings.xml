@@ -26,6 +26,8 @@
 	<string name="button6">GPIO61 LOW</string>
 	<string name="button7">usb camera</string>
 	<string name="button8">usb storage</string>
+	<string name="button9">send 0x21 0x02</string>
+	<string name="button10">send 0x21 0x03</string>
 	<!-- <string name="button7">切换到usb摄像头模式</string>
 	<string name="button8">切换到存储模式</string> -->
 	

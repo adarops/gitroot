@@ -458,8 +458,7 @@ public class Nt96650Engine {
 			synchronized (mReceivedPacketSemaphore) {
 				byte[] packet = null;
 				Log.d(TAG,
-						"data :" + "==================ok"
-								+ Nt96650Util.getHexString(buffer));
+						"recv data=====" + Nt96650Util.getHexString(buffer));
 
 				packet = Nt96650Protocal.getRxPacket(buffer);
 				if (packet != null) {
@@ -488,7 +487,7 @@ public class Nt96650Engine {
 				if (linkState == LinkState.LINKING)
 					retry = 1;
 				Log.d(TAG, " sendCmd start");
-				Log.d(TAG, " txbuf="+ Nt96650Util.getHexString(txbuf));
+				Log.d(TAG, " txbuf====="+ Nt96650Util.getHexString(txbuf));
 				
 				while (mLost < retry) {
 					synchronized (mReceivedPacketSemaphore) {

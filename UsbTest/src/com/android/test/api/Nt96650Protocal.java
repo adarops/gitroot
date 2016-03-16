@@ -392,10 +392,18 @@ public class Nt96650Protocal {
 		return txbuf;
 	}
 
+	public static int iskeyTvoutOk(byte[] buffer) {
+		if (buffer[0] != CMD_KEY_TVOUT)
+			return 0;
+		if (buffer[3] == 0x00)
+			return 0;
+		return 1;
+	}	
+	
 	// 0x21
 	public static byte[] keyUsb(int mode) {
 		// return sendCmdCommon(CMD_KEY_BRIGHT);
-		byte[] txbuf = new byte[10];
+		byte[] txbuf = new byte[11];
 		int crc;
 		curCmd = CMD_KEY_SETTING;
 		txbuf[0] = (byte) (CMD_HEAD >> 8);
@@ -412,16 +420,15 @@ public class Nt96650Protocal {
 		txbuf[10] = (byte) (CMD_TAIL & 0x00ff);
 		return txbuf;
 	}
-	
-	public static int iskeyTvoutOk(byte[] buffer) {
-		if (buffer[0] != CMD_KEY_TVOUT)
+
+	public static int iskeyUsbOk(byte[] buffer) {
+		if (buffer[0] != CMD_KEY_SETTING)
 			return 0;
 		if (buffer[3] == 0x00)
 			return 0;
 		return 1;
-	}	
+	}
 	
-
 	// 取到OK的包就返回，否则返回null,
 	// 每次都只解析到一个有效的数据包后就退出了，不好，但没有发现问题，暂时这样
 	public static byte[] getRxPacket(byte[] buffer) {
