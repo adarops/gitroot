@@ -411,7 +411,7 @@ public class Nt96650Protocal {
 		txbuf[2] = (byte) curCmd;
 		txbuf[3] = 0x00;
 		txbuf[4] = 0x02;
-		txbuf[5] = 0x00;
+		txbuf[5] = 0x13;
 		txbuf[6] = (byte) (mode & 0xff);
 		crc = Nt96650Util.GetCRC16(txbuf, 7);
 		txbuf[7] = (byte) (crc & 0x00ff); // 低字节在前

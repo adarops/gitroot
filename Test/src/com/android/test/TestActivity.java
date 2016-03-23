@@ -1,89 +1,106 @@
 package com.android.test;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
+import android.hardware.Sensor;
+import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.view.View.OnClickListener;
+import android.view.KeyEvent;
 import android.widget.Button;
+import android.widget.TextView;
 
-public class TestActivity extends Activity implements OnClickListener {
+public class TestActivity extends Activity implements SensorEventListener {
 
-	private Button btnOn;
-	private Button btnOff;
-	private Button btnReset;
-	private Button btnLcmSiwtch;
-	private Button btBlOff;
-	private static String TAG = "<zyx>";
+	private static String TAG = "zyx";
 	private TestInterface mTest;
-	private static int lcmState;
+	private Button button1;
+	private Context mContext;
+	private TextView gText1, gText2, gText3, gText4, gText5, gText6;
+	private SensorManager mSensorManager;
+	private Sensor mAccelerometer;;
 
 	protected void onCreate(Bundle state) {
 		super.onCreate(state);
 
 		setContentView(R.layout.main);
 
+		mContext = getApplicationContext();
 		mTest = new TestInterface();
 
-		btnLcmSiwtch = (Button) findViewById(R.id.button1);
-		btnLcmSiwtch.setOnClickListener(this);
-		btnOn = (Button) findViewById(R.id.button2);
-		btnOn.setOnClickListener(this);
-		btnOff = (Button) findViewById(R.id.button3);
-		btnOff.setOnClickListener(this);
-		btnReset = (Button) findViewById(R.id.button4);
-		btnReset.setOnClickListener(this);
-		/*
-		 * btBlOff = (Button) findViewById(R.id.button5);
-		 * btBlOff.setOnClickListener(this);
-		 */
+		IntentFilter filter = new IntentFilter();
+		filter.addAction("action_change_txzvoice_orc");
+		filter.addAction("com.android.internal.policy.impl.camerakey");
+		mContext.registerReceiver(mIntentReceiver, filter, null, null);
 
-		// mTest.lcmSwitchTo655();
-		lcmState = 1;
+		gText1 = (TextView) findViewById(R.id.auto_gsensor_step1);
+		gText2 = (TextView) findViewById(R.id.auto_gsensor_step2);
+		gText3 = (TextView) findViewById(R.id.auto_gsensor_step3);
+
+		mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
+		mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION);
 	}
 
-	public void onClick(View v) {
-		Log.i(TAG, "onClick");
-		switch (v.getId()) {
-		case R.id.button1:
-			if (lcmState == 1) {
-				mTest.lcmSwitchTo655();
-				lcmState = 0;
-			} else {
-				mTest.lcmSwitchTo35();
-				lcmState = 1;
-			}
-			// Toast.makeText(this, (state ? "on" : "off"),0).show();
-			break;
-		case R.id.button2:
-			Log.i(TAG, "nt655PowerOn");
-			mTest.nt655PowerOn();
-			// Toast.makeText(this, (state ? "on" : "off"),0).show();
-			break;
-		case R.id.button3:
-			Log.i(TAG, "nt655PowerOff");
-			mTest.nt655PowerOff();
-			// Toast.makeText(this, (state ? "on" : "off"),0).show();
-			break;
-		case R.id.button4:
-			Log.i(TAG, "nt655Reset");
-			mTest.nt655Reset();
-			// Toast.makeText(this, (state ? "on" : "off"),0).show();
-			break;
-		/*
-		 * case R.id.button5: Log.i(TAG, "setBacklightOff");
-		 * mTest.setBacklightOff(); // Toast.makeText(this, (state ? "on" :
-		 * "off"),0).show(); break;
-		 */
+	private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
+		@Override
+		public void onReceive(Context context, Intent intent) {
+			String action = intent.getAction();
 
+			if (action.equals("action_change_txzvoice_orc")) {
+				Log.i(TAG, "receive voice broadcast");
+			} else if (action
+					.equals("com.android.internal.policy.impl.camerakey")) {
+				Log.i(TAG, "receive takePicture broadcast");
+			}
 		}
+	};
+	
+	@Override
+	public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
 	}
 
 	@Override
-	protected void onPause() {
-		// TODO Auto-generated method stub
-		super.onPause();
-		mTest.lcmSwitchTo35();
-		lcmState = 1;
+	public void onSensorChanged(SensorEvent event) {
+		//TYPE_LINEAR_ACCELERATION 	TYPE_ACCELEROMETER
+		if (event.sensor.getType() == Sensor.TYPE_LINEAR_ACCELERATION) { 
+			Log.d(TAG, "onSensorChanged,gText1,gText2,gText3" + gText1 + ","
+					+ gText2 + "," + gText3);
+			gText1.setText("  X: " + event.values[0] + " m/s^2");
+			gText2.setText("  Y: " + event.values[1] + " m/s^2");
+			gText3.setText("  Z: " + event.values[2] + " m/s^2");
+		}
+
 	}
+
+	public boolean onKeyUp(int keyCode, android.view.KeyEvent event) {
+		switch (keyCode) {
+		case KeyEvent.KEYCODE_CAMERA:
+			// Log.i(TAG, "key_camera press");
+			// Intent broadcastIntent=new Intent();
+			// broadcastIntent.setAction("takePicture");
+			// mContext.sendBroadcast(broadcastIntent);
+			break;
+		case 230:
+			Log.i(TAG, "key_voice press");
+			break;
+		}
+		return super.onKeyUp(keyCode, event);
+	};
+
+	protected void onResume() {
+		super.onResume();
+		mSensorManager.registerListener(this, mAccelerometer, SensorManager.SENSOR_DELAY_NORMAL);
+	}
+
+	protected void onPause() {
+		super.onPause();
+		mSensorManager.unregisterListener(this);
+	}
+
 }
