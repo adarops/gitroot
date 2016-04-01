@@ -37,6 +37,7 @@ public class TestActivity extends Activity implements SensorEventListener {
 		IntentFilter filter = new IntentFilter();
 		filter.addAction("action_change_txzvoice_orc");
 		filter.addAction("com.android.internal.policy.impl.camerakey");
+		filter.addAction("com.android.server.am.AppErrorDialog");
 		mContext.registerReceiver(mIntentReceiver, filter, null, null);
 
 		gText1 = (TextView) findViewById(R.id.auto_gsensor_step1);
@@ -47,8 +48,11 @@ public class TestActivity extends Activity implements SensorEventListener {
 		gText6 = (TextView) findViewById(R.id.auto_gsensor_step6);
 
 		mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
-		mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
-		mLinear = mSensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION);
+		mAccelerometer = mSensorManager
+				.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+		mLinear = mSensorManager
+				.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION);
+
 	}
 
 	private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
@@ -61,10 +65,13 @@ public class TestActivity extends Activity implements SensorEventListener {
 			} else if (action
 					.equals("com.android.internal.policy.impl.camerakey")) {
 				Log.i(TAG, "receive takePicture broadcast");
+			} else if (action
+					.equals("com.android.server.am.AppErrorDialog")) {
+				Log.i(TAG, "receive AppErrorDialog broadcast");
 			}
 		}
 	};
-	
+
 	@Override
 	public void onAccuracyChanged(Sensor sensor, int accuracy) {
 
@@ -72,14 +79,14 @@ public class TestActivity extends Activity implements SensorEventListener {
 
 	@Override
 	public void onSensorChanged(SensorEvent event) {
-		//TYPE_LINEAR_ACCELERATION 	TYPE_ACCELEROMETER
-		if (event.sensor.getType() == Sensor.TYPE_LINEAR_ACCELERATION) { 
+		// TYPE_LINEAR_ACCELERATION TYPE_ACCELEROMETER
+		if (event.sensor.getType() == Sensor.TYPE_LINEAR_ACCELERATION) {
 			gText1.setText("LINEAR X: " + event.values[0] + " m/s^2");
 			gText2.setText("LINEAR Y: " + event.values[1] + " m/s^2");
 			gText3.setText("LINEAR Z: " + event.values[2] + " m/s^2");
 		}
-		
-		if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) { 
+
+		if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
 			gText4.setText("ACCEL X: " + event.values[0] + " m/s^2");
 			gText5.setText("ACCEL Y: " + event.values[1] + " m/s^2");
 			gText6.setText("ACCEL Z: " + event.values[2] + " m/s^2");
@@ -103,8 +110,10 @@ public class TestActivity extends Activity implements SensorEventListener {
 
 	protected void onResume() {
 		super.onResume();
-		mSensorManager.registerListener(this, mLinear, SensorManager.SENSOR_DELAY_NORMAL);
-		mSensorManager.registerListener(this, mAccelerometer, SensorManager.SENSOR_DELAY_NORMAL);
+		mSensorManager.registerListener(this, mLinear,
+				SensorManager.SENSOR_DELAY_NORMAL);
+		mSensorManager.registerListener(this, mAccelerometer,
+				SensorManager.SENSOR_DELAY_NORMAL);
 	}
 
 	protected void onPause() {
