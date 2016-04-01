@@ -25,12 +25,12 @@
     <string name="app_name">test</string>
     <!-- G-Sensor -->
     <string name="auto_gsensor">G-sensor</string>
-    <string name="auto_gsensor_step1">X:</string>
-    <string name="auto_gsensor_step2">Y:</string>
-    <string name="auto_gsensor_step3">Z:</string>
-    <string name="auto_gsensor_step4">4. Right</string>
-    <string name="auto_gsensor_step5">5. Face up</string>
-    <string name="auto_gsensor_step6">6. Face down</string>
+    <string name="auto_gsensor_step1">LINEAR X:</string>
+    <string name="auto_gsensor_step2">LINEAR Y:</string>
+    <string name="auto_gsensor_step3">LINEAR Z:</string>
+    <string name="auto_gsensor_step4">ACCEL X:</string>
+    <string name="auto_gsensor_step5">ACCEL Y:</string>
+    <string name="auto_gsensor_step6">ACCEL Z:</string>
 	<string name="auto_gyro_gsensor">Gyro-sensor</string>
 
 </resources>

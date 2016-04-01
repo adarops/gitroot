@@ -25,5 +25,27 @@
         android:layout_height="wrap_content"
         android:text="@string/auto_gsensor_step3"
         android:textSize="20dip" />
+    
+    <TextView
+        android:id="@+id/auto_gsensor_step4"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="30dip"
+        android:text="@string/auto_gsensor_step4"
+        android:textSize="20dip" />
+
+    <TextView
+        android:id="@+id/auto_gsensor_step5"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/auto_gsensor_step5"
+        android:textSize="20dip" />
+
+    <TextView
+        android:id="@+id/auto_gsensor_step6"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/auto_gsensor_step6"
+        android:textSize="20dip" />
 
 </LinearLayout>

@@ -23,7 +23,8 @@ public class TestActivity extends Activity implements SensorEventListener {
 	private Context mContext;
 	private TextView gText1, gText2, gText3, gText4, gText5, gText6;
 	private SensorManager mSensorManager;
-	private Sensor mAccelerometer;;
+	private Sensor mAccelerometer;
+	private Sensor mLinear;
 
 	protected void onCreate(Bundle state) {
 		super.onCreate(state);
@@ -41,9 +42,13 @@ public class TestActivity extends Activity implements SensorEventListener {
 		gText1 = (TextView) findViewById(R.id.auto_gsensor_step1);
 		gText2 = (TextView) findViewById(R.id.auto_gsensor_step2);
 		gText3 = (TextView) findViewById(R.id.auto_gsensor_step3);
+		gText4 = (TextView) findViewById(R.id.auto_gsensor_step4);
+		gText5 = (TextView) findViewById(R.id.auto_gsensor_step5);
+		gText6 = (TextView) findViewById(R.id.auto_gsensor_step6);
 
 		mSensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
-		mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION);
+		mAccelerometer = mSensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
+		mLinear = mSensorManager.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION);
 	}
 
 	private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
@@ -69,13 +74,16 @@ public class TestActivity extends Activity implements SensorEventListener {
 	public void onSensorChanged(SensorEvent event) {
 		//TYPE_LINEAR_ACCELERATION 	TYPE_ACCELEROMETER
 		if (event.sensor.getType() == Sensor.TYPE_LINEAR_ACCELERATION) { 
-			Log.d(TAG, "onSensorChanged,gText1,gText2,gText3" + gText1 + ","
-					+ gText2 + "," + gText3);
-			gText1.setText("  X: " + event.values[0] + " m/s^2");
-			gText2.setText("  Y: " + event.values[1] + " m/s^2");
-			gText3.setText("  Z: " + event.values[2] + " m/s^2");
+			gText1.setText("LINEAR X: " + event.values[0] + " m/s^2");
+			gText2.setText("LINEAR Y: " + event.values[1] + " m/s^2");
+			gText3.setText("LINEAR Z: " + event.values[2] + " m/s^2");
 		}
-
+		
+		if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) { 
+			gText4.setText("ACCEL X: " + event.values[0] + " m/s^2");
+			gText5.setText("ACCEL Y: " + event.values[1] + " m/s^2");
+			gText6.setText("ACCEL Z: " + event.values[2] + " m/s^2");
+		}
 	}
 
 	public boolean onKeyUp(int keyCode, android.view.KeyEvent event) {
@@ -95,6 +103,7 @@ public class TestActivity extends Activity implements SensorEventListener {
 
 	protected void onResume() {
 		super.onResume();
+		mSensorManager.registerListener(this, mLinear, SensorManager.SENSOR_DELAY_NORMAL);
 		mSensorManager.registerListener(this, mAccelerometer, SensorManager.SENSOR_DELAY_NORMAL);
 	}
 
