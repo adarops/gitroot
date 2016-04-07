@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="select">Select USB Web Camera</string>
+    <string name="camera">Camera</string>
+    <string name="refresh">Refresh</string>
+    <string name="no_device">No USB camera found</string>
+    <string name="app_name">UVCDemo</string>
+
+    <!-- context -->
+    <string name="s_null">null</string>
+    <string name="s_to_scan">驱动外设</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="cancel">取消</string>
+
+</resources>

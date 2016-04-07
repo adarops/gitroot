@@ -2,7 +2,10 @@
     package="com.android.test"
     android:versionCode="1"
     android:versionName="1.0" >
+
     <!-- android:sharedUserId="android.uid.system" -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" >
+    </uses-permission>
 
     <uses-sdk
         android:minSdkVersion="9"
@@ -13,15 +16,23 @@
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        <activity android:name="TestActivity"
-                  android:theme="@android:style/Theme.Light"
-                  android:windowSoftInputMode="stateAlwaysHidden">
+        <activity
+            android:name="TestActivity"
+            android:theme="@android:style/Theme.Light"
+            android:windowSoftInputMode="stateAlwaysHidden" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <!-- <category android:name="android.intent.category.DEFAULT" /> -->
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <!-- <receiver android:name=".StaticBroadcastReceiver" >
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="com.android.server.am.AppErrorDialog" />
+            </intent-filter>
+        </receiver> -->
     </application>
 
 </manifest>

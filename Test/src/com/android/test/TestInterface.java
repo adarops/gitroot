@@ -9,12 +9,12 @@ public class TestInterface {
 	}
 
 	public void lcmSwitchTo35() {
-		Log.i("<zyx>", "lcm switch to 35");
+		Log.i("zyx", "lcm switch to 35");
 		lcmSwitch(1);
 	}
 
 	public void lcmSwitchTo655() {
-		Log.i("<zyx>", "lcm switch to 35");
+		Log.i("zyx", "lcm switch to 35");
 		lcmSwitch(0);
 	}
 

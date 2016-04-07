@@ -6,8 +6,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.hardware.Sensor;
-import android.hardware.SensorEvent;
-import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.util.Log;
@@ -15,7 +13,7 @@ import android.view.KeyEvent;
 import android.widget.Button;
 import android.widget.TextView;
 
-public class TestActivity extends Activity implements SensorEventListener {
+public class TestActivity extends Activity {
 
 	private static String TAG = "zyx";
 	private TestInterface mTest;
@@ -30,7 +28,7 @@ public class TestActivity extends Activity implements SensorEventListener {
 		super.onCreate(state);
 
 		setContentView(R.layout.main);
-
+		Log.d(TAG, "onCreate");
 		mContext = getApplicationContext();
 		mTest = new TestInterface();
 
@@ -40,7 +38,7 @@ public class TestActivity extends Activity implements SensorEventListener {
 		filter.addAction("com.android.server.am.AppErrorDialog");
 		mContext.registerReceiver(mIntentReceiver, filter, null, null);
 
-		gText1 = (TextView) findViewById(R.id.auto_gsensor_step1);
+		/*gText1 = (TextView) findViewById(R.id.auto_gsensor_step1);
 		gText2 = (TextView) findViewById(R.id.auto_gsensor_step2);
 		gText3 = (TextView) findViewById(R.id.auto_gsensor_step3);
 		gText4 = (TextView) findViewById(R.id.auto_gsensor_step4);
@@ -51,8 +49,24 @@ public class TestActivity extends Activity implements SensorEventListener {
 		mAccelerometer = mSensorManager
 				.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
 		mLinear = mSensorManager
-				.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION);
-
+				.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION);*/
+		
+		new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				Log.d(TAG, "new thread");
+				try {
+					Thread.sleep(1000);
+				} catch (InterruptedException e) {
+					e.printStackTrace();
+				}
+				Log.d(TAG, "new thread 1");
+				mTest.lcmSwitchTo35();
+				Log.d(TAG, "new thread 2");
+			}
+		}).start();
+		
 	}
 
 	private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
@@ -72,12 +86,12 @@ public class TestActivity extends Activity implements SensorEventListener {
 		}
 	};
 
-	@Override
+	/*@Override
 	public void onAccuracyChanged(Sensor sensor, int accuracy) {
 
-	}
+	}*/
 
-	@Override
+	/*@Override
 	public void onSensorChanged(SensorEvent event) {
 		// TYPE_LINEAR_ACCELERATION TYPE_ACCELEROMETER
 		if (event.sensor.getType() == Sensor.TYPE_LINEAR_ACCELERATION) {
@@ -91,7 +105,7 @@ public class TestActivity extends Activity implements SensorEventListener {
 			gText5.setText("ACCEL Y: " + event.values[1] + " m/s^2");
 			gText6.setText("ACCEL Z: " + event.values[2] + " m/s^2");
 		}
-	}
+	}*/
 
 	public boolean onKeyUp(int keyCode, android.view.KeyEvent event) {
 		switch (keyCode) {
@@ -110,15 +124,15 @@ public class TestActivity extends Activity implements SensorEventListener {
 
 	protected void onResume() {
 		super.onResume();
-		mSensorManager.registerListener(this, mLinear,
+		/*mSensorManager.registerListener(this, mLinear,
 				SensorManager.SENSOR_DELAY_NORMAL);
 		mSensorManager.registerListener(this, mAccelerometer,
-				SensorManager.SENSOR_DELAY_NORMAL);
+				SensorManager.SENSOR_DELAY_NORMAL);*/
 	}
 
 	protected void onPause() {
 		super.onPause();
-		mSensorManager.unregisterListener(this);
+//		mSensorManager.unregisterListener(this);
 	}
 
 }
