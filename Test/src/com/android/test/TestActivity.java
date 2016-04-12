@@ -50,7 +50,7 @@ public class TestActivity extends Activity {
 				.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
 		mLinear = mSensorManager
 				.getDefaultSensor(Sensor.TYPE_LINEAR_ACCELERATION);*/
-		
+/*		
 		new Thread(new Runnable() {
 			
 			@Override
@@ -66,7 +66,7 @@ public class TestActivity extends Activity {
 				Log.d(TAG, "new thread 2");
 			}
 		}).start();
-		
+*/		
 	}
 
 	private BroadcastReceiver mIntentReceiver = new BroadcastReceiver() {
@@ -107,7 +107,7 @@ public class TestActivity extends Activity {
 		}
 	}*/
 
-	public boolean onKeyUp(int keyCode, android.view.KeyEvent event) {
+	/*public boolean onKeyUp(int keyCode, android.view.KeyEvent event) {
 		switch (keyCode) {
 		case KeyEvent.KEYCODE_CAMERA:
 			// Log.i(TAG, "key_camera press");
@@ -120,7 +120,7 @@ public class TestActivity extends Activity {
 			break;
 		}
 		return super.onKeyUp(keyCode, event);
-	};
+	};*/
 
 	protected void onResume() {
 		super.onResume();
